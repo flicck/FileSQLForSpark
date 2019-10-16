@@ -18,7 +18,7 @@ FileSQLForSpark解决了Spark输入文件不够灵活的痛点，其可以让程
 #### from /users/wanghan/input2 limit 3" 
 运行时,需在args中传入上述参数。如上代表从/users/wanghan/input1目录下读取text格式文件，从/users/wanghan/input2目录下读取json格式文件
 同时对text数据源输入的单个文件大小、文件名、文件数量进行了限制，对json数据源的文件数量进行了限制。  
- > FileSQLForSpark对Spark2.3.0以上提供了getDataFrameUnionByName(),使用该方法,传入你继承的PreStructWithDelimits或PreStructWithDelimits
+ > FileSQLForSpark对Spark2.3.0以上提供了getDataFrameUnionByName(),使用该方法,传入你继承的PreStructWithDelimits或PreStructWithOutDelimits
  > 类以描述结构信息，便可以将不同数据源的数据结构化的整合成一个DataFrame。不同数据源的缺失字段会补齐为null  
  > 如果使用的版本低于2.3.0,那么FileSQLForSpark只提供了getDataFrameSimpleUnion，该方法无需传入结构，返回一个只有一个value字段的DataFrame
  > 这时，json等含有结构的数据源读取的过程中，字段之间会加入\001分隔符，缺失字段同样会用nuil进行补齐
