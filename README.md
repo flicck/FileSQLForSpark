@@ -16,7 +16,7 @@ FileSQLForSpark解决了Spark输入文件不够灵活的痛点，其可以让程
 ### 2.FileSQLForSpark SQL语法说明
 >先来一个典型的SQL例子
 #### "select text from /users/wanghan/input1 where fileSize > 100m and < 300m  rlike 'hello' limit 4 union select json 
-#### from /users/wanghan/input2 where totalSize < 2g limit 3" 
+#### from /users/wanghan/input2 where totalSize < 2g limit 3" （符号与单词之间均需要空格）
 运行时,需在args中传入上述参数。如上代表从/users/wanghan/input1目录下读取text格式文件，从/users/wanghan/input2目录下读取json格式文件
 同时对text数据源输入的单个文件大小、文件名、文件数量进行了限制，对json数据源的文件数量和输入文件的总大小进行了限制。  
  > FileSQLForSpark对Spark2.3.0以上提供了getDataFrameUnionByName(),使用该方法,传入你继承的PreStructWithDelimits或PreStructWithOutDelimits
