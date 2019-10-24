@@ -15,7 +15,7 @@ FileSQLForSpark解决了Spark输入文件不够灵活的痛点，其可以让程
 #### 1.10 运行时会输出使用的sql语句，输入文件，以及所有输入数据的字节数，方便Spark调优
 
 ### 2.FileSQLForSpark SQL语法说明
->先来一个典型的SQL例子
+>来一个典型的SQL例子
 #### "select text from /users/wanghan/input1 where fileSize > 100m and < 300m and time >= 2019-2-1 rlike 'hello' limit 4 union select json 
 #### from /users/wanghan/input2 where totalSize < 2g limit 3" （符号与单词之间均需要空格）
 运行时,需在args中传入上述参数。如上代表从/users/wanghan/input1目录下读取text格式文件，从/users/wanghan/input2目录下读取json格式文件
@@ -24,4 +24,4 @@ FileSQLForSpark解决了Spark输入文件不够灵活的痛点，其可以让程
  > 类以描述结构信息，便可以将不同数据源的数据结构化的整合成一个DataFrame。不同数据源的缺失字段会补齐为null  
  > FileSQLForSpark也提供了getDataFrameSimpleUnion，该方法无需传入结构，返回一个只有一个value字段的DataFrame
  > 这时，json等含有结构的数据源读取的过程中，字段之间会加入\001分隔符，缺失字段同样会用null进行补齐
-#### 未完待续
+
